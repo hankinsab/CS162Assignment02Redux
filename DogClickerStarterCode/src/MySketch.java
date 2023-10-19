@@ -24,6 +24,7 @@ public class MySketch extends PApplet {
         //TODO: assign the dog object variable to a new Dog object.
         //pass in this sketch (so the dog can draw on it) 
         //along with the width and height of the canvas.
+        dog = new Dog(this, 500, 500);
     }
 
     /* This method over and over again, repainting the background and
@@ -31,13 +32,18 @@ public class MySketch extends PApplet {
      */
     public void draw(){
         //TODO: set the color of the canvas' background.
+        background(0);
         //TODO: draw the dog
+        dog.draw();
     }
 
     /* This methos is called every time the mouse is pressed */
     public void mousePressed() {
         // TODO: call the dog object's method that figures out of the mouse was pressed on the dog object.
         // Passing in the mouse's x and y position so it can do its job.
+        if (mousePressed == true && dog.isSelected(mouseX, mouseY){
+            dog.draw();
+        }
         // TODO: if the mouse if on the dog, move the dog. 
         // You might create a new dog object at a random location or move the current dog to a different location.
         // Note: when you update the dog object variable to reference a different object, Java
@@ -46,6 +52,6 @@ public class MySketch extends PApplet {
         
         }    
     }
-}
+
 
 
